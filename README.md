@@ -4,5 +4,8 @@ php unit
 
 event/eventlistener
 
+validation
+serialization
+model/entitiy
 assets
 translations

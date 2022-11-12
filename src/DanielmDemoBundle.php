@@ -14,10 +14,9 @@ class DanielmDemoBundle extends AbstractBundle
     {
         // load an XML, PHP or Yaml file
         $container->import('Resources/config/services.yaml');
-        $container->import('Resources/config/routes.yaml');
     }
 
-    public function registerCommands(Application $application)
+    public function registerCommands(Application $application): void
     {
         $application->add(new DemoCommand());
     }

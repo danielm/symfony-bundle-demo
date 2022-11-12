@@ -24,7 +24,7 @@ class DemoCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $io = new SymfonyStyle($input, $output);
-        $name = $input->getArgument('arg1');
+        $name = $input->getArgument('name');
 
         $io->success(sprintf('Hello %s!', $name));
 

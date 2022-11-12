@@ -1,4 +1,0 @@
-danielm_demo_bundle:
-  resource: "@DanielmDemoBundle/Controller/"
-  type: attribute
-  prefix: /demo
