@@ -1,0 +1,39 @@
+{
+    "name": "danielm/symfony-recipes-demo-bundle",
+    "description": "An Skeleton/Demo bundle",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "homepage": "https://github.com/danielm/symfony-recipes-demo-bundle",
+    "keywords":["symfony", "recipes", "demo", "skeleton", "private", "bundle"],
+    "authors": [{
+        "name": "Daniel Morales",
+        "email": "daniel85mg@gmail.com",
+        "homepage":"https://daniel.uy"
+    }],
+    "autoload": {
+        "psr-4": {
+            "Danielm\\DemoBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Danielm\\DemoBundle\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": ">=8.1",
+        "symfony/framework-bundle": "^6.3",
+        "symfony/console": "^6.3"
+    },
+    "config": {
+        "allow-plugins": {
+            "symfony/flex": true
+        },
+        "sort-packages": true
+    },
+    "scripts": {
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd"
+        }
+    }
+}

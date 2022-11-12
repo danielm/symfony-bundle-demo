@@ -1,0 +1,14 @@
+services:
+  danielm_demobundle.twig_extension:
+    class: Danielm\DemoBundle\Twig\DemoTwigExtension
+    public: false
+    tags:
+      - { name: twig.extension }
+
+  danielm_demobundle.service:
+    class: Danielm\DemoBundle\Service\DemoService
+    public: false
+    arguments:
+      $container: '@container'
+
+  Danielm\DemoBundle\Contract\InertiaInterface: '@danielm_demobundle.service'
