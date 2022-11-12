@@ -1,6 +1,6 @@
 <?php
 
-namespace Danielm\InertiaBundle;
+namespace Danielm\DemoBundle;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;

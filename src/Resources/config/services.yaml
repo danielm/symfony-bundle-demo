@@ -11,4 +11,4 @@ services:
     arguments:
       $container: '@container'
 
-  Danielm\DemoBundle\Contract\InertiaInterface: '@danielm_demobundle.service'
+  Danielm\DemoBundle\Contract\DemoServiceInterface: '@danielm_demobundle.service'
