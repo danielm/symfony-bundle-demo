@@ -9,7 +9,7 @@ services:
     class: Danielm\DemoBundle\Service\DemoService
     public: false
     arguments:
-      $container: '@container'
+      $container: '@service_container'
 
   Danielm\DemoBundle\Contract\DemoServiceInterface: '@danielm_demobundle.service'
 

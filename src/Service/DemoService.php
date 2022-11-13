@@ -14,7 +14,7 @@ class DemoService implements DemoServiceInterface {
         return $this;
     }
 
-    public function sum(int $a, int $b): int
+    public function calc(int $a, int $b): int
     {
         return $a + $b;
     }
