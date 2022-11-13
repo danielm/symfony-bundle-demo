@@ -4,8 +4,14 @@ php unit
 
 event/eventlistener
 
-validation
-serialization
-model/entitiy
+env
+secrets
+config/parameters
+
 assets
 translations
+
+model/entitiy
+
+validation
+serialization
