@@ -1,17 +1,12 @@
 php stan (code analysis) & github workflow
 php csfixer:  * @see https://cs.symfony.com/doc/rules/index.html
-php unit
+php unitz
 
-event/eventlistener
+Review:
+    - Why twig in my controlelr i've to use DanielmDemo, and than on folders and such 
+        is: templates/bundles/DanielmDemoBundle/Demo/view.html.twig
 
-env
-secrets
-config/parameters
-
-assets
-translations
-
-model/entitiy
-
+//secrets (docker swarm)
 validation
 serialization
+model/entitiy

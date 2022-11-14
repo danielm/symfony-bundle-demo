@@ -1,24 +1,41 @@
 services:
-  danielm_demobundle.twig_extension:
+  ## Twig Extension demo
+  danielm_demo.twig_extension:
     class: Danielm\DemoBundle\Twig\DemoTwigExtension
     public: false
     tags:
       - { name: twig.extension }
 
-  danielm_demobundle.service:
+  ## Just a configurable demo service
+  danielm_demo.service:
     class: Danielm\DemoBundle\Service\DemoService
     public: false
-    arguments:
-      $container: '@service_container'
+    #arguments:
+    #  $container: '@service_container'
+    #  $configuration: '@danielm_demo.configuration'
 
-  Danielm\DemoBundle\Contract\DemoServiceInterface: '@danielm_demobundle.service'
+  Danielm\DemoBundle\Contract\DemoServiceInterface: '@danielm_demo.service'
 
+  ## Review: Probably remove this, maybe not
+  Danielm\DemoBundle\Configuration: '@danielm_demo.configuration'
+
+  ## Controllers (Review this!)
   Danielm\DemoBundle\Controller\:
       resource: '../src/Controller/*'
       autowire: true
       autoconfigure: true
+      #arguments:
+      #  $configuration: '@danielm_demo.configuration'
 
+  ## Controllers (Review this!)
   Danielm\DemoBundle\Command\:
     resource: '../src/Command/*'
     autowire: true
     autoconfigure: true
+    #arguments:
+    #  $configuration: '@danielm_demo.configuration'
+
+  Danielm\DemoBundle\EventSubscriber\DemoSubscriber:
+    autowire: true
+    autoconfigure: true
+    #tags: [ kernel.event_subscriber ]

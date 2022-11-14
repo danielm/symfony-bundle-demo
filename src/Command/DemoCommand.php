@@ -2,6 +2,7 @@
 
 namespace Danielm\DemoBundle\Command;
 
+use Danielm\DemoBundle\Configuration;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -15,6 +16,12 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 )]
 class DemoCommand extends Command
 {
+    public function __construct(
+        protected Configuration $configuration
+    ) {
+        parent::__construct();
+    }
+
     protected function configure(): void
     {
         $this

@@ -1,0 +1,3 @@
+demo:
+  greet: "Hola Twig!"
+  test_msg: "Mensaje desde una funcion twig: %name%"
