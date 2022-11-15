@@ -22,8 +22,9 @@
     },
     "require": {
         "php": ">=8.1",
+        "symfony/console": "^6.3",
         "symfony/framework-bundle": "^6.3",
-        "symfony/console": "^6.3"
+        "symfony/translation": "^6.3"
     },
     "config": {
         "allow-plugins": {
@@ -36,11 +37,12 @@
             "cache:clear": "symfony-cmd",
             "assets:install %PUBLIC_DIR%": "symfony-cmd"
         },
-        "post-install-cmd": [
-            "@auto-scripts"
-        ],
-        "post-update-cmd": [
-            "@auto-scripts"
-        ]
+        ""
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "*",
+        "phpstan/phpstan": "*",
+        "symfony/test-pack": "*",
+        "symfony/yaml": "*"
     }
 }
