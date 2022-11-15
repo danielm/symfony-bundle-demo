@@ -2,7 +2,7 @@
 
 namespace Danielm\DemoBundle\Contract;
 
-
-interface DemoServiceInterface {
+interface DemoServiceInterface
+{
     public function calc(int $a, int $b): int;
 }

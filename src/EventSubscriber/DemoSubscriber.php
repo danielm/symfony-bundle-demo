@@ -1,4 +1,5 @@
 <?php
+
 namespace Danielm\DemoBundle\EventSubscriber;
 
 use Danielm\DemoBundle\Event\UnnecessaryEvent;
@@ -9,7 +10,8 @@ class DemoSubscriber implements EventSubscriberInterface
 {
     public function __construct(
         protected LoggerInterface $logger
-    ) { }
+    ) {
+    }
 
     public static function getSubscribedEvents(): array
     {

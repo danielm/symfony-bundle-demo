@@ -11,7 +11,7 @@ class DanielmDemoBundle extends AbstractBundle
 {
     public function configure(DefinitionConfigurator $definition): void
     {
-        //$definition->import('../config/definition.php');
+        // $definition->import('../config/definition.php');
 
         $definition->rootNode()
             ->children()

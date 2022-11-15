@@ -1,4 +1,5 @@
 <?php
+
 namespace Danielm\DemoBundle\Twig;
 
 use Twig\Extension\AbstractExtension;
@@ -12,8 +13,9 @@ class DemoTwigExtension extends AbstractExtension
             new TwigFunction('demoFcn', [$this, 'demo']),
         ];
     }
+
     public function demo()
     {
-        return "Howdy from the Twig Extension";
+        return 'Howdy from the Twig Extension';
     }
 }

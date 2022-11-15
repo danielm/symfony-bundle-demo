@@ -37,7 +37,8 @@
             "cache:clear": "symfony-cmd",
             "assets:install %PUBLIC_DIR%": "symfony-cmd"
         },
-        ""
+        "cs:check": "php-cs-fixer check --diff",
+        "cs:fix": "php-cs-fixer fix"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "*",

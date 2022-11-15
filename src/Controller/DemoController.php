@@ -2,8 +2,8 @@
 
 namespace Danielm\DemoBundle\Controller;
 
-use Danielm\DemoBundle\Contract\DemoServiceInterface;
 use Danielm\DemoBundle\Configuration;
+use Danielm\DemoBundle\Contract\DemoServiceInterface;
 use Danielm\DemoBundle\Event\UnnecessaryEvent;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
@@ -21,14 +21,13 @@ class DemoController extends AbstractController
     public function index(
         DemoServiceInterface $service,
         Configuration $configuration,
-    ): JsonResponse
-    {
+    ): JsonResponse {
         return $this->json([
             'message' => 'Index action from our DemoController Bundle!',
             'result' => $service->calc(12, 13),
             'config' => [
-                '#1' => $configuration->getEnvValue()
-            ]
+                '#1' => $configuration->getEnvValue(),
+            ],
         ]);
     }
 
@@ -41,11 +40,10 @@ class DemoController extends AbstractController
     #[Route('/dispatch', name: 'demo_dispatch')]
     public function dispatch(EventDispatcherInterface $dispatcher): JsonResponse
     {
-        $dispatcher->dispatch(new UnnecessaryEvent);
+        $dispatcher->dispatch(new UnnecessaryEvent());
 
         return $this->json([
             'message' => 'Event dispatched!',
         ]);
     }
-
 }
