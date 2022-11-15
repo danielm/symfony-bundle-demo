@@ -38,7 +38,9 @@
             "assets:install %PUBLIC_DIR%": "symfony-cmd"
         },
         "cs:check": "php-cs-fixer check --diff",
-        "cs:fix": "php-cs-fixer fix"
+        "cs:fix": "php-cs-fixer fix",
+        "test:unit": "phpunit --testsuite Unit",
+        "test:functional": "phpunit --testsuite Functional"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "*",

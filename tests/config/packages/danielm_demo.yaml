@@ -1,0 +1,6 @@
+danielm_demo:
+  some_node:
+    required_number_value: 420
+    optional_value: 'Hardcoded value'
+    env_value: '%env(DEMO_SAMPLE_ENV)%'
+    #secret_value: '%DEMO_SAMPLE_SECRET%'

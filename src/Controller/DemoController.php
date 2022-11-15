@@ -17,14 +17,16 @@ class DemoController extends AbstractController
         protected Configuration $configuration
     ) { }*/
 
-    #[Route('/', name: 'demo_index')]
+    #[Route('/{a}/{b}', name: 'demo_index', requirements: ['a' => '\d+', 'b' => '\d+'])]
     public function index(
+        int $a,
+        int $b,
         DemoServiceInterface $service,
         Configuration $configuration,
     ): JsonResponse {
         return $this->json([
             'message' => 'Index action from our DemoController Bundle!',
-            'result' => $service->calc(12, 13),
+            'result' => $service->calc($a, $b),
             'config' => [
                 '#1' => $configuration->getEnvValue(),
             ],
