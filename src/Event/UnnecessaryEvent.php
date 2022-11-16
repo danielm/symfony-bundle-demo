@@ -8,11 +8,11 @@ class UnnecessaryEvent extends Event
 {
     public function __construct(
         protected string $data
-    )
-    {
+    ) {
     }
 
-    public function getData(): string {
+    public function getData(): string
+    {
         return $this->data;
     }
 

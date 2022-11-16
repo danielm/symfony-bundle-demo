@@ -4,7 +4,8 @@
  */
 
 $finder = PhpCsFixer\Finder::create()
-    ->in(['src', 'tests']);
+    ->in(['src', 'tests'])
+    ->exclude('var');
 
 return (new PhpCsFixer\Config())
     ->setRules([

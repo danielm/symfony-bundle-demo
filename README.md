@@ -9,11 +9,10 @@ model/entitiy
 
 
 TODO list
-- Terminar test
-- composer: deberia depender de twig ya que l test de view va fallar
-
 - Crear Readme
  
+- test event/dispatcher
+
 - php stan (code analysis) & github workflow
   - flow:
     - run ecs

@@ -1,3 +1,4 @@
 framework:
   test: true
   http_method_override: false
+  secret: '%env(APP_SECRET)%'

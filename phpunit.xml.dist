@@ -19,6 +19,7 @@
     <ini name="display_errors" value="1"/>
     <ini name="error_reporting" value="1"/>
     <env name="SYMFONY_DEPRECATIONS_HELPER" value="max[self]=0"/>
+    <env name="APP_SECRET" value="s3cr37bro"/>
     <server name="APP_ENV" value="test"/>
     <server name="APP_DEBUG" value="false"/>
     <server name="DEMO_SAMPLE_ENV" value="Some Random Test String"/>
