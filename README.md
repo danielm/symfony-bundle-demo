@@ -1,19 +1,35 @@
+# 🚀 Symfony Bundle Demo
 
-Review:
-    - Why twig in my controlelr i've to use DanielmDemo, and than on folders and such 
-        is: templates/bundles/DanielmDemoBundle/Demo/view.html.twig
+[![Build Status](https://github.com/danielm/symfony-bundle-demo/workflows/Tests/badge.svg)](https://github.com/alexeygeno/phone-verification-bundle/actions/workflows/tests.yml)
+[![Build Status](https://github.com/danielm/symfony-bundle-demo/workflows/PHPCsFixer/badge.svg)](https://github.com/alexeygeno/phone-verification-bundle/actions/workflows/php-cs-fixer.yml)
+[![Build Status](https://github.com/danielm/symfony-bundle-demo/workflows/PHPStan/badge.svg)](https://github.com/alexeygeno/phone-verification-bundle/actions/workflows/php-stan.yml)
 
-validation
-serialization
-model/entitiy
+## About
 
+This project is from my Post series about how to build a Symfony Recipes repository (private or not)
 
-TODO list
-- Crear Readme
- 
-- test event/dispatcher
+Includes:
+- DemoServices
 
-- php stan (code analysis) & github workflow
-  - flow:
-    - run ecs
-    - run tests
+## Install
+
+...
+
+## Composer scripts
+Coding Standards (*follows symfony's default rules*)
+```bash
+# Displays errors
+composer run cs:check
+# Makes changes
+composer run cs:fix
+```
+Testing
+```bash
+composer run test:unit
+composer run test:functional
+```
+
+## Todo
+- Validation examples
+- Serialization examples
+- Test Event & dispatcher
