@@ -13,7 +13,7 @@ class DanielmDemoBundle extends AbstractBundle
     {
         // $definition->import('../config/definition.php');
 
-        $definition->rootNode()
+        $definition->rootNode()/* @phpstan-ignore-line */
             ->children()
                 ->arrayNode('some_node')
                     ->children()
@@ -27,6 +27,7 @@ class DanielmDemoBundle extends AbstractBundle
         ;
     }
 
+    /** @param array<mixed> $config */
     public function loadExtension(array $config, ContainerConfigurator $container, ContainerBuilder $builder): void
     {
         // load an XML, PHP or Yaml file

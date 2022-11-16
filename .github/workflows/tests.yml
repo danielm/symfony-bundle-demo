@@ -1,0 +1,56 @@
+name: Tests
+
+on:
+  push:
+    branches:
+      - master
+      - '*.x'
+  pull_request:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: true
+      matrix:
+        stability: [ prefer-stable ]
+        php-version: [ '8.1', '8.2' ]
+        symfony-version: [ '6.3' ]
+
+    name: PHP ${{ matrix.php-version }} - Symfony ${{ matrix.symfony-version }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          ini-values: error_reporting=E_ALL
+          tools: composer:v2
+          coverage: xdebug
+
+      - name: Install dependencies
+        uses: nick-invision/retry@v2
+        with:
+          command: composer update --${{ matrix.stability }} --prefer-dist --no-interaction --no-plugins --no-scripts --no-progress
+          max_attempts: 5
+          timeout_minutes: 5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SYMFONY_REQUIRE: ${{ matrix.symfony-version }}
+
+      - name: Execute tests
+        run: composer run test
+      #  run: vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+
+      #- name: Upload coverage results to Coveralls
+      #  env:
+      #    COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #  run: |
+      #    composer global require php-coveralls/php-coveralls
+      #    php-coveralls --coverage_clover=build/logs/clover.xml -v

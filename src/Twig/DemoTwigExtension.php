@@ -14,7 +14,7 @@ class DemoTwigExtension extends AbstractExtension
         ];
     }
 
-    public function demo()
+    public function demo(): string
     {
         return 'Howdy from the Twig Extension';
     }

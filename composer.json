@@ -41,12 +41,18 @@
         },
         "cs:check": "php-cs-fixer check --diff",
         "cs:fix": "php-cs-fixer fix",
+        "cs:dry": "php-cs-fixer fix --dry-run",
         "test:unit": "phpunit --testsuite Unit",
-        "test:functional": "phpunit --testsuite Functional"
+        "test:functional": "phpunit --testsuite Functional",
+        "test": [
+            "@test:unit",
+            "@test:functional"
+        ],
+        "stan": "phpstan"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "*",
-        "phpstan/phpstan": "*",
+        "phpstan/phpstan": "^1.10",
         "symfony/test-pack": "*"
     }
 }
