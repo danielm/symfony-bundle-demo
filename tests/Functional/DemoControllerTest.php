@@ -2,8 +2,11 @@
 
 namespace Danielm\DemoBundle\Tests\Functional;
 
+use Danielm\DemoBundle\Event\UnnecessaryEvent;
+use Danielm\DemoBundle\EventSubscriber\DemoSubscriber;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Routing\RouterInterface;
 
@@ -49,13 +52,46 @@ class DemoControllerTest extends WebTestCase
 
     public function testViewAction(): void
     {
-        // Test Twig: Must add twig as a requirement to the librario composer
+        // Test Twig: Must add twig as a requirement to the library composer
         $this->assertTrue(true);
     }
 
     public function testDispatchAction(): void
     {
-        // Testing the event dispatcher / event recieved etc
-        $this->assertTrue(true);
+        $container = $this->client->getContainer();
+
+        $hash = md5('Hello World');
+        $url = $this->router->generate('demo_dispatch', ['hash' => $hash], UrlGeneratorInterface::ABSOLUTE_PATH);
+
+        $eventDispatcher = $this->createMock(DemoSubscriber::class);
+        $eventDispatcher->expects($this->once())
+            ->method('onUnnecessary')
+            ->with($this->isInstanceOf(UnnecessaryEvent::class));
+            //->willReturn($event);
+
+        $container->set(DemoSubscriber::class, $eventDispatcher);
+
+
+        $crawler = $this->client->request('GET', $url);
+
+        $this->assertResponseIsSuccessful();
+
+
+        /*$eventDispatcher = $container->get(EventDispatcherInterface::class);
+
+        // Assert that the specific event was dispatched
+        $this->assertTrue($eventDispatcher->hasListeners(UnnecessaryEvent::class));
+
+        $dispatchedEvents = $eventDispatcher->getListeners(UnnecessaryEvent::class);
+
+        $this->assertCount(1, $dispatchedEvents);
+
+        $actualEvent = $dispatchedEvents[0];
+
+        var_dump($actualEvent[1]);*/
+
+        //$eventData = $actualEvent[1]->getData();
+
+        //$this->assertEquals('expected_data', $event->getData());
     }
 }

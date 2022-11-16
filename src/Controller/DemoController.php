@@ -39,10 +39,10 @@ class DemoController extends AbstractController
         return $this->render('@DanielmDemo/Demo/view.html.twig');
     }
 
-    #[Route('/dispatch', name: 'demo_dispatch')]
-    public function dispatch(EventDispatcherInterface $dispatcher): JsonResponse
+    #[Route('/dispatch/{hash}', name: 'demo_dispatch', requirements: ['has' => '/^[a-fA-F0-9]{32}$/'])]
+    public function dispatch(string $hash, EventDispatcherInterface $dispatcher): JsonResponse
     {
-        $dispatcher->dispatch(new UnnecessaryEvent());
+        $dispatcher->dispatch(new UnnecessaryEvent($hash));
 
         return $this->json([
             'message' => 'Event dispatched!',
