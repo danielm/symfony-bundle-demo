@@ -5,6 +5,7 @@
 [![Build Status](https://github.com/danielm/symfony-bundle-demo/workflows/PHPStan/badge.svg)](https://github.com/danielm/symfony-bundle-demo/actions/workflows/php-stan.yml)
 
 See my blog post about this:
+
 [https://danielmg.org/php/2023/02/extending-symfony-bundle-flex-recipes-and-private-repositories.html](https://danielmg.org/php/2023/02/extending-symfony-bundle-flex-recipes-and-private-repositories.html])
 
 ## About
