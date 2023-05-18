@@ -1,9 +1,9 @@
 {
-    "name": "danielm/symfony-demo-bundle",
+    "name": "danielm/symfony-bundle-demo",
     "description": "An Skeleton/Demo bundle",
     "type": "symfony-bundle",
     "license": "MIT",
-    "homepage": "https://github.com/danielm/symfony-demo-bundle",
+    "homepage": "https://github.com/danielm/symfony-bundle-demo",
     "keywords":["symfony", "recipes", "demo", "skeleton", "private", "bundle"],
     "authors": [{
         "name": "Daniel Morales",
