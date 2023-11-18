@@ -1,0 +1,6 @@
+danielm_demo:
+  some_node:
+    required_number_value: 12
+    optional_value: 'uwu'
+    env_value: '%env(DEMO_SAMPLE_ENV)%'
+    #secret_value: '%DEMO_SAMPLE_SECRET%'

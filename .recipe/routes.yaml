@@ -1,0 +1,3 @@
+danielm_demo_bundle:
+  resource: "@DanielmDemoBundle/config/routes.yaml"
+  prefix: "/demo"
