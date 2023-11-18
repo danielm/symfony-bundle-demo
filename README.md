@@ -1,8 +1,8 @@
 # 🚀 Symfony Bundle Demo
 
-[![Build Status](https://github.com/danielm/symfony-bundle-demo/workflows/Tests/badge.svg)](https://github.com/danielm/symfony-bundle-demo/actions/workflows/tests.yml)
-[![Build Status](https://github.com/danielm/symfony-bundle-demo/workflows/PHPCsFixer/badge.svg)](https://github.com/danielm/symfony-bundle-demo/actions/workflows/php-cs-fixer.yml)
-[![Build Status](https://github.com/danielm/symfony-bundle-demo/workflows/PHPStan/badge.svg)](https://github.com/danielm/symfony-bundle-demo/actions/workflows/php-stan.yml)
+[![Build Status](https://github.com/danielm/symfony-demo-bundle/workflows/Tests/badge.svg)](https://github.com/danielm/symfony-demo-bundle/actions/workflows/tests.yml)
+[![Build Status](https://github.com/danielm/symfony-demo-bundle/workflows/PHPCsFixer/badge.svg)](https://github.com/danielm/symfony-demo-bundle/actions/workflows/php-cs-fixer.yml)
+[![Build Status](https://github.com/danielm/symfony-demo-bundle/workflows/PHPStan/badge.svg)](https://github.com/danielm/symfony-demo-bundle/actions/workflows/php-stan.yml)
 
 See my blog post about this:
 
@@ -33,7 +33,7 @@ This bundle is a demo that shows a couple of things yo can do on a Symfony bundl
 ### Using Symfony Recipe
 
 ```bash
-composer require danielm/symfony-bundle-demo
+composer require danielm/symfony-demo-bundle
 ```
 
 ### Manually
