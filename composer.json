@@ -35,10 +35,6 @@
         "sort-packages": true
     },
     "scripts": {
-        "auto-scripts": {
-            "cache:clear": "symfony-cmd",
-            "assets:install %PUBLIC_DIR%": "symfony-cmd"
-        },
         "cs:check": "php-cs-fixer check --diff",
         "cs:fix": "php-cs-fixer fix",
         "cs:dry": "php-cs-fixer fix --dry-run",
